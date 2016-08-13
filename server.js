@@ -11,15 +11,33 @@ var methodOverride = require('method-override');
 // make express app
 var app = express();
 
+// mongoose.connect('mongodb://localhost/test');
+var url = 'mongodb://localhost/vaultdb';
 
 
 // =================== Configuration
 
-// mongoose.connect('mongodb://localhost/test');
-var url = 'mongodb://localhost/todoApp-db';
-MongoClient.connect(url, function(err, db) {
-	assert.equal(null, err);
-	console.log("We are connected to Mongodb!");
+
+MongoClient.connect(url, function (err, db) {
+    assert.equal(null, err);
+
+    var collection = db.collection('vaultdb');
+
+    console.log("We are connected to Mongodb!");
+
+
+    app.get('/api/object', function (req, res) {
+        collection.find({"Serialnumber": "MXL0231KZ5"}).toArray(function (err, item) {
+            if (!err) {
+                res.json(item);
+            }
+            else {
+                console.log('error', err);
+            }
+        });
+
+
+    });
 
 });
 
@@ -30,6 +48,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 
+
 // REST STUFF
 app.use(express.static(__dirname + '/public'));
 
@@ -37,8 +56,7 @@ app.use(express.static(__dirname + '/public'));
 
 var portNum = 8080;
 app.listen(portNum);
-console.log(`This app is listening on port ${portNum}`);
-
+console.log('This app is listening on port ' + portNum);
 
 
 
