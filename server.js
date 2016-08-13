@@ -15,8 +15,6 @@ var app = express();
 
 // =================== Configuration
 
-
-
 // mongoose.connect('mongodb://localhost/test');
 var url = 'mongodb://localhost/todoApp-db';
 MongoClient.connect(url, function(err, db) {
@@ -26,19 +24,22 @@ MongoClient.connect(url, function(err, db) {
 });
 
 
-
-app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(bodyParser(bodyParser.urlencoded({'extended':'true'})));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 
+// REST STUFF
+app.use(express.static(__dirname + '/public'));
+
+
+
 var portNum = 8080;
 app.listen(portNum);
 console.log(`This app is listening on port ${portNum}`);
 
-app.listen(PORT.)
+
 
 
 function shutdownServer() {
