@@ -4,40 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ToDo Web App</title>
-    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/css/bootstrap-theme.min.css" rel="stylesheet">
-    <style>
-        #redbox {
-            background-color: #419641;
-        }
-
-        #coolbox {
-            background-color: #2e6da4;
-        }
-    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="todo_style.css" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="container-fluid jumbotron text-center" id="redbox">
-    <h1>Hello, World!</h1>
+    <h1>Hello, To-Do List!</h1>
 </div>
-
 
 <div class="container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at efficitur sapien. Nam viverra odio nec
-        ante imperdiet finibus. Nunc posuere mauris quis iaculis semper. Morbi elementum congue tincidunt. Sed eget orci
-        interdum, eleifend purus quis, volutpat nisi. In tempus ipsum sit amet magna porta accumsan. Mauris ullamcorper
-        feugiat mi elementum commodo. Vivamus leo risus, molestie a fermentum eget, viverra non purus. Nam condimentum
-        tortor a elit faucibus tristique sed et sem.
+    <div class="row todoItem">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right inner-todo"><input type="checkbox"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-left inner-todo">Buy groceries</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 inner-todo"><span class="glyphicon glyphicon-remove"></span></div>
+    </div>
+    <div class="row todoItem">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right inner-todo"><input type="checkbox"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-left inner-todo">Remember to pay the kids down the street to pick up the dog doodie</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 inner-todo"><span class="glyphicon glyphicon-remove"></span></div>
+    </div>
+    <div class="row todoItem">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right inner-todo"><input type="checkbox"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-left inner-todo">PAY THE DOCTOR</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 inner-todo"><span class="glyphicon glyphicon-remove"></span></div>
+    </div>
+    <div class="row todoItem">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right inner-todo"><input type="checkbox"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-left inner-todo">Pick up the dog from the goomers</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 inner-todo"><span class="glyphicon glyphicon-remove"></span></div>
+    </div>
+    <div class="row todoItem">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right inner-todo"><input type="checkbox"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-left inner-todo">Take Kelsey to work</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 inner-todo"><span class="glyphicon glyphicon-remove"></span></div>
+    </div>
+    <div class="row todoItem">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right inner-todo"><input type="checkbox"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-left inner-todo">Don't forget the apple pie</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 inner-todo"><span class="glyphicon glyphicon-remove"></span></div>
+    </div>
 
-        Donec tincidunt purus ut tristique facilisis. Proin ullamcorper leo sed lacus varius, sed bibendum lorem
-        faucibus. Nam vel ipsum sed nisl efficitur auctor. Fusce sed accumsan metus. Nam sem massa, lacinia ornare
-        auctor vitae, condimentum ut libero. Donec et neque non purus facilisis luctus. Etiam eu turpis laoreet dolor
-        sollicitudin malesuada. Morbi pharetra massa eget tortor malesuada, in sollicitudin eros iaculis.</p>
 </div>
 
 
-<script src="lib/js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
 </body>
 </html>
