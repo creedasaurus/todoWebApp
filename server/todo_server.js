@@ -37,8 +37,9 @@ app.get('*', function (req, res) {
 
 
 //====================== START SERVER =======================
-let server = app.listen(process.env.PORT, process.env.IP, function () {
-    console.log("Server Running on port: " + process.env.PORT);
+const PORT = 8181;
+let server = app.listen(PORT, process.env.IP, function () {
+    console.log("Server Running on port: " + PORT);
 });
 
 
