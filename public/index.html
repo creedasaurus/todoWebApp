@@ -1,58 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>ToDo Web App</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="todo_style.css" rel="stylesheet">
 </head>
 
-<body>
+<body ng-controller="TodoListController as todoList">
 <nav class="amber">
     <div class="no-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">Hello, Todo-List!</a>
+        <a id="logo-container" href="#" class="brand-logo">Hello, Todo-List! {{' Hello' + ' world ' + 3}}</a>
+        <!-- DATE -->
     </div>
 </nav>
-
 <div class="container">
-    <div class="card-panel hoverable row valign-wrapper">
-        <div class="col s2 right-align"><input class="filled-in" type="checkbox" id="finishedBtn1"><label class="valign chk_label right" for="finishedBtn1"></label></div>
-        <div class="col s8 left-align truncate"> Cool Beans </div>
-        <div class="col s2 left-align"><a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a></div></span>
+    <div class="card-panel hoverable row valign-wrapper" ng-repeat="todo in todoList.todos" data-show="????">
+        <div class="col s2 right-align"><input class="filled-in" type="checkbox" id="finishedBtn{{$index}}"><label
+                class="valign chk_label right" for="finishedBtn{{$index}}"></label></div>
+        <div class="col s8 left-align truncate">{{todo}}</div>
+        <div class="col s2 left-align"><a class="btn-floating btn-large waves-effect waves-light red"><i
+                class="material-icons">delete</i></a></div>
     </div>
-    <div class="card-panel hoverable row valign-wrapper">
-        <div class="col s2 right-align"><input class="filled-in" type="checkbox" id="finishedBtn2"><label class="valign chk_label right" for="finishedBtn2"></label></div>
-        <div class="col s8 left-align truncate"> Get the kids to pick up a whole lot of chips for this gnarly D&D party I'm throwing....  </div>
-        <div class="col s2 left-align"><a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a></div></span>
+</div>
+<div class="container">
+    <div class="row newItemField">
+        <div class="col s1 right-align"></div>
+        <div class="col s9 left-align input-field"><input id="new_item" type="text"><label for="new_item">New
+            Todo</label></div>
+        <div class="col s2 left-align"><a class="btn-floating btn-large waves-effect waves-light green"><i
+                class="material-icons">add</i></a></div>
     </div>
-    <div class="card-panel hoverable row valign-wrapper">
-        <div class="col s2 right-align"><input class="filled-in" type="checkbox" id="finishedBtn3"><label class="valign chk_label right" for="finishedBtn3"></label></div>
-        <div class="col s8 left-align truncate"> Get some groceries </div>
-        <div class="col s2 left-align"><a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a></div></span>
-    </div>
-    <div class="card-panel hoverable row valign-wrapper">
-        <div class="col s2 right-align"><input class="filled-in" type="checkbox" id="finishedBtn4"><label class="valign chk_label right" for="finishedBtn4"></label></div>
-        <div class="col s8 left-align truncate"> Find a new babysitter </div>
-        <div class="col s2 left-align"><a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a></div></span>
-    </div>
-    <div class="card-panel hoverable row valign-wrapper">
-        <div class="col s2 right-align"><input class="filled-in" type="checkbox" id="finishedBtn5"><label class="valign chk_label right" for="finishedBtn5"></label></div>
-        <div class="col s8 left-align truncate"> Pay the neighbor kid to pick all the crap up in the front yard </div>
-        <div class="col s2 left-align"><a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a></div></span>
-    </div>
-    <div class="card-panel hoverable row valign-wrapper">
-        <div class="col s2 right-align"><input class="filled-in" type="checkbox" id="finishedBtn6"><label class="valign chk_label right" for="finishedBtn6"></label></div>
-        <div class="col s8 left-align truncate"> Take a hot shower </div>
-        <div class="col s2 left-align"><a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a></div></span>
-    </div>
-
 </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <!--<script src="js/jquery-3.1.1.min.js"></script>-->
 <script src="js/materialize.min.js"></script>
+<script>
+
+    angular.module('app', [])
+        .controller('TodoListController', function () {
+            let todoList = this;
+            todoList.todos = [
+                'Cool Beans',
+                'Get the kids to pick up a whole lot of chips for this gnarly D&D party Im throwing',
+                'Get some groceries',
+                'Find a new babysitter',
+                'Pay the neighbor kid to pick all the crap up in the front yard',
+                'Take a hot shower'
+            ];
+        });
+
+</script>
 </body>
 </html>
 
+<!--Here are some notes.-->
+
+<!--When you are building a click handler, but it's only going to be run once, make a function that says it's a-->
+<!--'setup' function that sets up the click handlers. Then pull the click handlers out into that one function.-->
+<!--Repeated functions, you'll want to-->
+
+<!--Look up what a Server-Side Include is-->

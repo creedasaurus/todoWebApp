@@ -10,29 +10,23 @@ console.log(SERV)
 
 //===================== Get Primary Modules =======================
 let express = require('express');
-let fs = require('fs');
 
 //===================== Get Middleware Modules =======================
-// let logger = require('morgan');
 let compression = require('compression');
-// let favicon = require('serve-favicon');
 let bodyParser = require('body-parser');
 
 //====================== Create EXPRESS App =======================
 let app = express();
 
 // insert middleware
-// app.use(logger('dev'));
 app.use(compression());
-// app.use(favicon(WEB + '/img/favicon.ico'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //====================== STATIC FILES =======================
 app.use(express.static(WEB)); //Website Files
-// app.use('/api/student-images', express.static('student-images')); //Student images
 app.get('*', function (req, res) {
-    // res.status(404).sendFile(WEB + '/404Error.html');
+
 });
 
 
