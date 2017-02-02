@@ -31,9 +31,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 //====================== STATIC FILES =======================
 app.use(express.static(WEB)); //Website Files
 // app.use('/api/student-images', express.static('student-images')); //Student images
-app.get('*', function (req, res) {
-    // res.status(404).sendFile(WEB + '/404Error.html');
-});
 
 
 //====================== START SERVER =======================
