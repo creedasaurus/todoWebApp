@@ -2,7 +2,7 @@ body {
     background-color: rgba(180,176,181,0.4);
 }
 
-.card-panel {
+.card-panel, .newItemField {
     padding: 7px;
     display: flex;
     align-items: center;
@@ -11,3 +11,4 @@ body {
 .chk_label {
     margin-top: 3px;
 }
+
