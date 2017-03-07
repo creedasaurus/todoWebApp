@@ -1,0 +1,35 @@
+{
+  "name": "todo-webapp",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-material": "^1.1.3",
+    "angular-sanitize": "^1.6.1",
+    "body-parser": "^1.16.0",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "jquery": "^3.1.1",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.2"
+  },
+  "description": "This is the place I will attempt to build a simple to-do app.",
+  "main": "todo_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creedasaurus/todoWebApp.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Creed Haymond",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/creedasaurus/todoWebApp/issues"
+  },
+  "homepage": "https://github.com/creedasaurus/todoWebApp#readme"
+}
