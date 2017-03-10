@@ -14,7 +14,7 @@ let bodyParser = require('body-parser');
 
 
 let app = express();
-// app.disable('x-powered-by');
+app.disable('x-powered-by');
 
 app.use(logger('dev'));
 app.use(compression());
@@ -22,7 +22,7 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static('view/index.html'));
+app.use(express.static(__dirname + '/view'))
 
 const server = app.listen(port, hostname, ()=>{
     console.log(`Server running at http://${hostname}:${port}/`);
