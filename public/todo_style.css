@@ -2,13 +2,16 @@ body {
     background-color: rgba(180,176,181,0.4);
 }
 
-.card-panel, .newItemField {
-    padding: 7px;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-}
-.chk_label {
-    margin-top: 3px;
+nav {
+    margin-bottom: 1.2em;
 }
 
+.card-panel, .newItemField {
+    padding: .4375em;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+.chk_label {
+    margin-top: .2em;
+}
